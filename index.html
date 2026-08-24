@@ -72,7 +72,7 @@
 
         .tab-btn {
             flex: 1;
-            min-width: 80px;
+            min-width: 75px;
             padding: 10px 4px;
             background-color: #e2e8f0;
             color: #475569;
@@ -232,6 +232,59 @@
             margin: 4px 0 0 0;
             padding-left: 18px;
         }
+
+        /* 快速參考卡（緊急與文件）專用樣式 */
+        .banner-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .info-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .info-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 6px;
+        }
+
+        .info-card ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 0.88rem;
+            color: #334155;
+        }
+
+        .info-card li {
+            margin-bottom: 6px;
+        }
+
+        .phone-btn {
+            display: inline-block;
+            background-color: #ef4444;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-left: 6px;
+        }
     </style>
 </head>
 <body>
@@ -251,6 +304,7 @@
         <button class="tab-btn" onclick="switchTab(1)">Day 2</button>
         <button class="tab-btn" onclick="switchTab(2)">Day 3</button>
         <button class="tab-btn" onclick="switchTab(3)">Day 4</button>
+        <button class="tab-btn" onclick="switchTab(4)">緊急與文件</button>
     </div>
 
     <!-- Day 1 -->
@@ -677,6 +731,61 @@
             <ul>
                 <li>預留充足時間辦理託運與通關。</li>
                 <li>注意台灣動植物檢疫規定，勿帶肉類製品返台。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 緊急與文件 (Quick Reference Card) -->
+    <div class="tab-content">
+        <!-- 動漫風格上海外灘插畫圖片 -->
+        <img class="banner-img" src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80" alt="上海外灘風情">
+
+        <div class="info-card">
+            <h3>✈️ 航班預訂資訊 (PNR)</h3>
+            <ul>
+                <li><strong>去程：</strong>7/31 中國國際航空 CA196 (TPE ➔ PVG)</li>
+                <li><strong>回程：</strong>8/03 上海航空 FM801 (PVG ➔ TSA)</li>
+                <li><strong>訂位代碼 (PNR)：</strong><code>【請在此填入PNR代碼】</code></li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3>🏨 飯店電話與地址</h3>
+            <ul>
+                <li>
+                    <strong>上海舒芙酒店（金沙江路店）</strong><br>
+                    • 電話：+86 21-XXXX-XXXX<br>
+                    • 地址：上海市普陀區金沙江路 XXX 號
+                </li>
+                <li style="margin-top: 8px;">
+                    <strong>嘉興博雅花園酒店</strong><br>
+                    • 電話：+86 573-XXXX-XXXX<br>
+                    • 地址：浙江省嘉興市南湖區迎賓大道 XXX 號
+                </li>
+                <li style="margin-top: 8px;">
+                    <strong>上海大眾空港賓館（北樓）</strong><br>
+                    • 電話：+86 21-6835-8888<br>
+                    • 地址：上海浦東國際機場 T1 與 T2 航站樓中間連廊
+                </li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3>🚨 當地緊急求助電話</h3>
+            <ul>
+                <li>匪警（警察）：<strong style="color:#ef4444;">110</strong> <a class="phone-btn" href="tel:110">撥打</a></li>
+                <li>火警（消防）：<strong style="color:#ef4444;">119</strong> <a class="phone-btn" href="tel:119">撥打</a></li>
+                <li>醫療急救（救護車）：<strong style="color:#ef4444;">120</strong> <a class="phone-btn" href="tel:120">撥打</a></li>
+                <li>交通事故報警：<strong style="color:#ef4444;">122</strong> <a class="phone-btn" href="tel:122">撥打</a></li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3>🏛️ 駐外／海基會緊急聯絡</h3>
+            <ul>
+                <li><strong>海基會防偽與緊急服務專線：</strong><br>+886 2-2533-9995（24小時）</li>
+                <li><strong>海基會台商/急難救助熱線：</strong><br>+886 2-2718-7373</li>
+                <li><strong>提醒：</strong>若護照/台胞證遺失，請先向當地公安局出入境管理處報案開立證明。</li>
             </ul>
         </div>
     </div>
