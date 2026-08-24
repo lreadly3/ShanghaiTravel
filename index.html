@@ -33,20 +33,11 @@
             margin: 0 auto;
         }
 
-        /* 頂部主圖 */
-        .main-header-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px 12px 0 0;
-            display: block;
-        }
-
         header {
             background-color: var(--primary-color);
             color: white;
             padding: 16px;
-            border-radius: 0 0 12px 12px;
+            border-radius: 12px;
             margin-bottom: 16px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
@@ -242,7 +233,7 @@
             padding-left: 18px;
         }
 
-        /* 快速參考卡（緊急與文件）專用樣式 */
+        /* 快速參考卡（重要資訊）專用樣式 */
         .info-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -290,9 +281,6 @@
 <body>
 
 <div class="container">
-    <!-- 頂部圖片 -->
-    <img class="main-header-img" src="image.png" alt="上海外灘天際線">
-
     <header>
         <h1>上海＋嘉興 4天3夜自由行</h1>
         <p>高鐵快閃 ‧ 嘉興演唱會 ‧ 美食購物漫遊</p>
@@ -307,7 +295,7 @@
         <button class="tab-btn" onclick="switchTab(1)">Day 2</button>
         <button class="tab-btn" onclick="switchTab(2)">Day 3</button>
         <button class="tab-btn" onclick="switchTab(3)">Day 4</button>
-        <button class="tab-btn" onclick="switchTab(4)">緊急與文件</button>
+        <button class="tab-btn" onclick="switchTab(4)">重要資訊</button>
     </div>
 
     <!-- Day 1 -->
@@ -738,14 +726,13 @@
         </div>
     </div>
 
-    <!-- 緊急與文件 (Quick Reference Card) -->
+    <!-- 重要資訊 (Quick Reference Card) -->
     <div class="tab-content">
         <div class="info-card">
-            <h3>✈️ 航班預訂資訊 (PNR)</h3>
+            <h3>✈️ 航班預訂資訊</h3>
             <ul>
                 <li><strong>去程：</strong>7/31 中國國際航空 CA196 (TPE ➔ PVG)</li>
                 <li><strong>回程：</strong>8/03 上海航空 FM801 (PVG ➔ TSA)</li>
-                <li><strong>訂位代碼 (PNR)：</strong><code>【請在此填入PNR代碼】</code></li>
             </ul>
         </div>
 
@@ -774,9 +761,8 @@
             <h3>🚨 當地緊急求助電話</h3>
             <ul>
                 <li>匪警（警察）：<strong style="color:#ef4444;">110</strong> <a class="phone-btn" href="tel:110">撥打</a></li>
-                <li>火警（消防）：<strong style="color:#ef4444;">119</strong> <a class="phone-btn" href="tel:119">撥打</a></li>
+                <li>(消防)：<strong style="color:#ef4444;">119</strong> <a class="phone-btn" href="tel:119">撥打</a></li>
                 <li>醫療急救（救護車）：<strong style="color:#ef4444;">120</strong> <a class="phone-btn" href="tel:120">撥打</a></li>
-                <li>交通事故報警：<strong style="color:#ef4444;">122</strong> <a class="phone-btn" href="tel:122">撥打</a></li>
             </ul>
         </div>
 
