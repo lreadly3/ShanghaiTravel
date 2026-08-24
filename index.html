@@ -12,79 +12,83 @@
             --card-bg: #ffffff;
             --text-color: #1e293b;
             --link-color: #2563eb;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
             margin: 0;
-            padding: 16px;
+            padding: 12px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 20px;
+            padding: 16px;
             border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         header h1 {
-            margin: 0 0 8px 0;
-            font-size: 1.6rem;
+            margin: 0 0 6px 0;
+            font-size: 1.4rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
         .meta-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 12px;
+            margin-top: 10px;
             background-color: rgba(255, 255, 255, 0.12);
-            padding: 10px 14px;
+            padding: 8px 12px;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .tab-nav {
             display: flex;
-            gap: 8px;
-            margin-bottom: 20px;
+            gap: 6px;
+            margin-bottom: 16px;
             overflow-x: auto;
             padding-bottom: 4px;
+            -webkit-overflow-scrolling: touch;
         }
 
         .tab-btn {
             flex: 1;
-            min-width: 100px;
-            padding: 12px 8px;
+            min-width: 80px;
+            padding: 10px 4px;
             background-color: #e2e8f0;
             color: #475569;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             transition: all 0.2s ease;
             text-align: center;
             white-space: nowrap;
         }
 
-        .tab-btn:hover {
-            background-color: #cbd5e1;
-        }
-
         .tab-btn.active {
             background-color: var(--primary-color);
             color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .tab-content {
@@ -97,16 +101,16 @@
 
         .weather-box {
             background-color: #e0f2fe;
-            border-left: 5px solid #0284c7;
-            padding: 12px 16px;
+            border-left: 4px solid #0284c7;
+            padding: 10px 12px;
             border-radius: 6px;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+            margin-bottom: 16px;
+            font-size: 0.85rem;
         }
 
         .weather-box ul {
             margin: 4px 0 0 0;
-            padding-left: 20px;
+            padding-left: 18px;
         }
 
         .itinerary-table {
@@ -115,15 +119,15 @@
             background-color: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 16px;
         }
 
         .itinerary-table th, 
         .itinerary-table td {
-            padding: 12px 14px;
+            padding: 10px;
             text-align: left;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--border-color);
             vertical-align: top;
         }
 
@@ -131,61 +135,107 @@
             background-color: #f1f5f9;
             color: var(--primary-color);
             font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .time-col {
+            width: 32%;
+            font-size: 0.85rem;
+        }
+
+        .info-col {
+            width: 68%;
+        }
+
+        .time-text {
+            font-weight: bold;
+            color: #0f172a;
+            display: block;
+            margin-bottom: 4px;
         }
 
         .badge {
             display: inline-block;
-            padding: 3px 8px;
+            padding: 2px 6px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: white;
             white-space: nowrap;
         }
 
-        .badge-trans {
-            background-color: #ff9800;
+        .badge-trans { background-color: #ff9800; }
+        .badge-spot { background-color: #4caf50; }
+        .badge-hotel { background-color: #673ab7; }
+
+        .spot-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #1e293b;
         }
 
-        .badge-spot {
-            background-color: #4caf50;
+        .hotel-tag {
+            margin-top: 6px;
+            padding: 4px 8px;
+            background-color: #f3e8ff;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: #581c87;
         }
 
-        .badge-hotel {
-            background-color: #673ab7;
+        /* 可折疊詳情樣式 */
+        details {
+            margin-top: 6px;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        summary {
+            padding: 6px 8px;
+            font-weight: bold;
+            color: var(--link-color);
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid var(--border-color);
+            background-color: #f1f5f9;
+        }
+
+        .details-content {
+            padding: 8px 10px;
+            color: #334155;
+        }
+
+        .details-content ul {
+            margin: 4px 0;
+            padding-left: 18px;
         }
 
         .map-link {
             display: inline-block;
-            margin-top: 4px;
+            margin-top: 6px;
             color: var(--link-color);
             text-decoration: none;
-            font-size: 0.85rem;
             font-weight: bold;
-        }
-
-        .map-link:hover {
-            text-decoration: underline;
         }
 
         .summary-box {
             background-color: #fffbe3;
-            border-left: 5px solid var(--accent-color);
-            padding: 15px;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px;
             border-radius: 6px;
-            margin-top: 25px;
+            margin-top: 16px;
+            font-size: 0.85rem;
         }
 
         .summary-box ul {
-            margin: 5px 0 0 0;
-            padding-left: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .itinerary-table th, .itinerary-table td {
-                padding: 8px;
-                font-size: 0.85rem;
-            }
+            margin: 4px 0 0 0;
+            padding-left: 18px;
         }
     </style>
 </head>
@@ -193,79 +243,87 @@
 
 <div class="container">
     <header>
-        <h1>上海＋嘉興 4 天 3 夜自由行</h1>
+        <h1>上海＋嘉興 4天3夜自由行</h1>
         <p>高鐵快閃 ‧ 嘉興演唱會 ‧ 美食購物漫遊</p>
-        
         <div class="meta-info">
-            <div class="meta-item"><strong>旅行日期：</strong>2026/07/31 – 2026/08/03</div>
-            <div class="meta-item"><strong>重點行程：</strong>南京路吉伊卡哇、嘉興演唱會、南湖景區</div>
+            <strong>旅行日期：</strong>2026/07/31 – 2026/08/03
         </div>
     </header>
 
-    <!-- Tab 切換按鈕區 -->
+    <!-- Tab 切換按鈕 -->
     <div class="tab-nav">
-        <button class="tab-btn active" onclick="switchTab(0)">Day 1 (7/31)</button>
-        <button class="tab-btn" onclick="switchTab(1)">Day 2 (8/1)</button>
-        <button class="tab-btn" onclick="switchTab(2)">Day 3 (8/2)</button>
-        <button class="tab-btn" onclick="switchTab(3)">Day 4 (8/3)</button>
+        <button class="tab-btn active" onclick="switchTab(0)">Day 1</button>
+        <button class="tab-btn" onclick="switchTab(1)">Day 2</button>
+        <button class="tab-btn" onclick="switchTab(2)">Day 3</button>
+        <button class="tab-btn" onclick="switchTab(3)">Day 4</button>
     </div>
 
-    <!-- Day 1 頁籤內容 -->
+    <!-- Day 1 -->
     <div class="tab-content active">
         <div class="weather-box">
-            <strong>☀️ Day 1 當地天氣與建議：</strong>
-            <br>上海夏季炎熱高溫（29°C - 35°C），午後易有局部短暫雷陣雨。
-            <ul>
-                <li><strong>穿著：</strong>建議透氣輕便短袖，進出地鐵與機場冷氣房可備薄外套。</li>
-                <li><strong>隨身裝備：</strong>隨身攜帶雨具與遮陽傘。</li>
-            </ul>
+            <strong>☀️ 當地天氣：</strong>上海（29°C - 35°C），高溫防暑，午後易有雷陣雨。
         </div>
 
         <table class="itinerary-table">
             <thead>
                 <tr>
-                    <th style="width: 15%;">時間</th>
-                    <th style="width: 15%;">類別</th>
-                    <th style="width: 45%;">行程與交通內容</th>
-                    <th style="width: 25%;">住宿飯店</th>
+                    <th class="time-col">時間 / 類別</th>
+                    <th class="info-col">行程內容與住宿</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>14:40 - 16:45</strong></td>
-                    <td><span class="badge badge-trans">✈️ 交通</span></td>
                     <td>
-                        <strong>搭乘航班抵達上海（國航 CA196）</strong><br>
-                        • 桃園國際機場 T2 ➔ 上海浦東國際機場 T2<br>
-                        • 辦理入境與提領行李（預估 45-60 分鐘）<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport" target="_blank">📍 浦東國際機場地圖</a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>16:45 - 19:00</strong></td>
-                    <td><span class="badge badge-trans">🚗 交通</span></td>
-                    <td>
-                        <strong>前往飯店 Check-in</strong><br>
-                        • 地鐵 2 號線至「金沙江路站」（約 1.5 小時）或搭計程車/滴滴（約 45-60 分鐘）<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jinshajiang+Road+Station+Shanghai" target="_blank">📍 金沙江路地鐵站地圖</a>
+                        <span class="time-text">14:40 - 16:45</span>
+                        <span class="badge badge-trans">✈️ 交通</span>
                     </td>
                     <td>
-                        <span class="badge badge-hotel">🏨 上海舒芙酒店</span><br>
-                        <small>（環球港金沙江路地鐵站店）</small><br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海舒芙酒店" target="_blank">📍 飯店地圖</a>
+                        <div class="spot-title">抵達上海（國航 CA196）</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 路線：桃園國際機場 T2 ➔ 上海浦東國際機場 T2<br>
+                                • 預估入境與提領行李約需 45-60 分鐘。<br>
+                                • 提醒：過關請備妥台胞證原件。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport" target="_blank">📍 浦東機場地圖</a>
+                            </div>
+                        </details>
                     </td>
                 </tr>
                 <tr>
-                    <td><strong>19:00 - </strong></td>
-                    <td><span class="badge badge-spot">🍽️ 景點/晚餐</span></td>
                     <td>
-                        <strong>晚餐與夜遊（岩姐燒烤 / 環球港 / 外灘）</strong><br>
-                        • 晚餐享用<b>岩姐燒烤</b>，餐後可至環球港購物或搭地鐵前往外灘欣賞夜景<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海+岩姐燒烤" target="_blank">📍 岩姐燒烤地圖</a> | 
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Bund+Shanghai" target="_blank">📍 外灘地圖</a>
+                        <span class="time-text">16:45 - 19:00</span>
+                        <span class="badge badge-trans">🚗 交通</span>
                     </td>
-                    <td></td>
+                    <td>
+                        <div class="spot-title">前往飯店 Check-in</div>
+                        <div class="hotel-tag">🏨 上海舒芙酒店（金沙江路店）</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 交通：地鐵 2 號線至「金沙江路站」（約 1.5 小時）或搭計程車/滴滴（約 45-60 分鐘）。<br>
+                                • 提醒：搭車前請確認微信或支付寶電子支付已設置完畢。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海舒芙酒店" target="_blank">📍 飯店地圖</a>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">19:00 - </span>
+                        <span class="badge badge-spot">🍽️ 景點/晚餐</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">岩姐燒烤 / 環球港 / 外灘夜景</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 晚餐享用岩姐燒烤，餐後可至環球港購物或搭地鐵至外灘欣賞夜景。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海+岩姐燒烤" target="_blank">📍 岩姐燒烤</a> | 
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Bund+Shanghai" target="_blank">📍 外灘地圖</a>
+                            </div>
+                        </details>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -273,101 +331,137 @@
         <div class="summary-box">
             <strong>💡 Day 1 實用提醒：</strong>
             <ul>
-                <li><strong>入境通關：</strong>請準備好台胞證原件以利過關。</li>
-                <li><strong>電子支付：</strong>抵達後先確認微信支付或支付寶已成功綁卡，方便搭乘地鐵與叫車。</li>
+                <li>入境通關請準備好台胞證原件。</li>
+                <li>抵達後先確認微信支付或支付寶已綁卡成功。</li>
             </ul>
         </div>
     </div>
 
-    <!-- Day 2 頁籤內容 -->
+    <!-- Day 2 -->
     <div class="tab-content">
         <div class="weather-box">
-            <strong>☀️ Day 2 當地天氣與建議：</strong>
-            <br>日間步行戶外時間較長，上海與嘉興高溫約 31°C - 36°C，體感極為悶熱。
-            <ul>
-                <li><strong>防曬與降溫：</strong>務必準備防曬乳、遮陽帽/傘及手持小風扇。</li>
-                <li><strong>演唱會注意事項：</strong>場館周邊人潮密集，記得多補充水分防範中暑。</li>
-            </ul>
+            <strong>☀️ 當地天氣：</strong>上海/嘉興（31°C - 36°C），體感悶熱，注意防曬降溫。
         </div>
 
         <table class="itinerary-table">
             <thead>
                 <tr>
-                    <th style="width: 15%;">時間</th>
-                    <th style="width: 15%;">類別</th>
-                    <th style="width: 45%;">行程與交通內容</th>
-                    <th style="width: 25%;">住宿飯店</th>
+                    <th class="time-col">時間 / 類別</th>
+                    <th class="info-col">行程內容與住宿</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>09:00 - 12:00</strong></td>
-                    <td><span class="badge badge-spot">📍 景點/逛街</span></td>
                     <td>
-                        <strong>南京路步行街 & 吉伊卡哇 (Chiikawa) 旗艦店</strong><br>
-                        • 逛上海經典商業街及 MINISO 吉伊卡哇主題旗艦店<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Pedestrian+Street+Shanghai" target="_blank">📍 南京路步行街地圖</a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>12:00 - 14:30</strong></td>
-                    <td><span class="badge badge-spot">🍽️ 午餐</span></td>
-                    <td>
-                        <strong>午餐：海鮮自助餐</strong><br>
-                        • 於南京路商圈享用海鮮自助餐點
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>14:30 - 16:32</strong></td>
-                    <td><span class="badge badge-trans">🚗 交通</span></td>
-                    <td>
-                        <strong>市區移動 ➔ 上海虹橋站</strong><br>
-                        • 取行李並預留時間，務必於 15:45 前抵達虹橋站準備安檢進站<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 上海虹橋站地圖</a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>16:32 - 16:59</strong></td>
-                    <td><span class="badge badge-trans">🚄 鐵路交通</span></td>
-                    <td>
-                        <strong>搭乘高鐵前往嘉興（G1583 次）</strong><br>
-                        • 上海虹橋站 ➔ 嘉興南站（車程 27 分鐘）<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站地圖</a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>17:00 - 17:40</strong></td>
-                    <td><span class="badge badge-trans">🚗 交通</span></td>
-                    <td>
-                        <strong>前往飯店 Check-in</strong><br>
-                        • 嘉興南站搭乘計程車/滴滴至飯店（約 20 分鐘）
+                        <span class="time-text">09:00 - 12:00</span>
+                        <span class="badge badge-spot">📍 景點/購物</span>
                     </td>
                     <td>
-                        <span class="badge badge-hotel">🏨 嘉興博雅花園酒店</span><br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興博雅花園酒店" target="_blank">📍 飯店地圖</a>
+                        <div class="spot-title">南京路步行街 & 吉伊卡哇旗艦店</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 漫步南京路商圈，朝聖 MINISO 吉伊卡哇 (Chiikawa) 主題旗艦店。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Pedestrian+Street+Shanghai" target="_blank">📍 南京路地圖</a>
+                            </div>
+                        </details>
                     </td>
                 </tr>
                 <tr>
-                    <td><strong>18:00 - 22:00</strong></td>
-                    <td><span class="badge badge-spot">🎤 活動</span></td>
                     <td>
-                        <strong>嘉興演唱會之夜</strong><br>
-                        • 攜帶台胞證原件入場，散場時留意交通接駁
+                        <span class="time-text">12:00 - 14:30</span>
+                        <span class="badge badge-spot">🍽️ 午餐</span>
                     </td>
-                    <td></td>
+                    <td>
+                        <div class="spot-title">午餐：海鮮自助餐</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 於南京路商圈享用豐富海鮮自助餐。
+                            </div>
+                        </details>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>22:00 - </strong></td>
-                    <td><span class="badge badge-spot">🍽️ 宵夜</span></td>
                     <td>
-                        <strong>晚餐/宵夜：冒菜</strong><br>
-                        • 演唱會結束後享用冒菜
+                        <span class="time-text">14:30 - 16:32</span>
+                        <span class="badge badge-trans">🚗 交通</span>
                     </td>
-                    <td></td>
+                    <td>
+                        <div class="spot-title">移動前往上海虹橋站</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 需回飯店取行李並轉乘至虹橋站。<br>
+                                • 提醒：虹橋站安檢耗時，務必於 15:45 前抵達車站。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 虹橋站地圖</a>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">16:32 - 16:59</span>
+                        <span class="badge badge-trans">🚄 鐵路</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">高鐵至嘉興（G1583 次）</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 上海虹橋站 ➔ 嘉興南站（車程約 27 分鐘）。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站地圖</a>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">17:00 - 17:40</span>
+                        <span class="badge badge-trans">🚗 交通</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">前往嘉興飯店 Check-in</div>
+                        <div class="hotel-tag">🏨 嘉興博雅花園酒店</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 由嘉興南站搭乘計程車/滴滴至飯店（車程約 20 分鐘）。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興博雅花園酒店" target="_blank">📍 飯店地圖</a>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">18:00 - 22:00</span>
+                        <span class="badge badge-spot">🎤 活動</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">嘉興演唱會之夜</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 提醒：門票採實名制，務必攜帶台胞證原件入場。<br>
+                                • 散場時人潮較多，請預先規劃接駁方式並補充水分。
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">22:00 - </span>
+                        <span class="badge badge-spot">🍽️ 宵夜</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">宵夜：冒菜</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 演唱會結束後於周邊享用地道冒菜。
+                            </div>
+                        </details>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -375,94 +469,123 @@
         <div class="summary-box">
             <strong>💡 Day 2 實用提醒：</strong>
             <ul>
-                <li><strong>高鐵安檢：</strong>虹橋站安檢時間較長，16:32 車次請最晚於 15:45 抵達車站。</li>
-                <li><strong>演唱會門票：</strong>採實名制入場，務必隨身攜帶<b>台胞證原件</b>。</li>
+                <li>高鐵虹橋站安檢嚴格，16:32 車次請最晚 15:45 抵達。</li>
+                <li>演唱會採實名制，隨身攜帶台胞證原件。</li>
             </ul>
         </div>
     </div>
 
-    <!-- Day 3 頁籤內容 -->
+    <!-- Day 3 -->
     <div class="tab-content">
         <div class="weather-box">
-            <strong>☀️ Day 3 當地天氣與建議：</strong>
-            <br>嘉興南湖景區多為戶外水域，體感溫度高，注意防曬與防蚊。
-            <ul>
-                <li><strong>湖邊防曬：</strong>搭乘渡船或逛古街時無遮蔽物，建議攜帶防曬傘與防蚊液。</li>
-                <li><strong>午後陣雨：</strong>傍晚跨區返回上海時可能遇午後雨，注意隨身行李防水。</li>
-            </ul>
+            <strong>☀️ 當地天氣：</strong>嘉興/上海，景區戶外多水域，注意防曬防蚊及午後雨。
         </div>
 
         <table class="itinerary-table">
             <thead>
                 <tr>
-                    <th style="width: 15%;">時間</th>
-                    <th style="width: 15%;">類別</th>
-                    <th style="width: 45%;">行程與交通內容</th>
-                    <th style="width: 25%;">住宿飯店</th>
+                    <th class="time-col">時間 / 類別</th>
+                    <th class="info-col">行程內容與住宿</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>09:00 - 11:30</strong></td>
-                    <td><span class="badge badge-spot">📍 景點</span></td>
                     <td>
-                        <strong>嘉興觀光：南湖景區 / 月河歷史街區</strong><br>
-                        • 搭渡船遊南湖、參觀煙雨樓、漫步月河古街<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+Nanhu+Lake" target="_blank">📍 南湖景區地圖</a> | 
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Yuehe+Historic+District+Jiaxing" target="_blank">📍 月河歷史街區地圖</a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>11:30 - 13:00</strong></td>
-                    <td><span class="badge badge-spot">🍽️ 午餐</span></td>
-                    <td>
-                        <strong>午餐：蘭州拉麵</strong><br>
-                        • 於當地麵館享用牛肉湯麵
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>13:00 - 14:25</strong></td>
-                    <td><span class="badge badge-trans">🚗 交通</span></td>
-                    <td>
-                        <strong>前往嘉興南站</strong><br>
-                        • 需於 13:45 前抵達嘉興南站準備進站<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站地圖</a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>14:25 - 14:59</strong></td>
-                    <td><span class="badge badge-trans">🚄 鐵路交通</span></td>
-                    <td>
-                        <strong>搭乘高鐵返回上海（G44 次）</strong><br>
-                        • 嘉興南站 ➔ 上海虹橋站（車程 34 分鐘）<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 上海虹橋站地圖</a>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>15:00 - 17:00</strong></td>
-                    <td><span class="badge badge-trans">🚌 交通</span></td>
-                    <td>
-                        <strong>跨區轉乘：虹橋 ➔ 浦東機場</strong><br>
-                        • 可搭乘「機場一線」直達巴士（約 60-70 分鐘）或地鐵 2 號線（約 90 分鐘）
+                        <span class="time-text">09:00 - 11:30</span>
+                        <span class="badge badge-spot">📍 景點</span>
                     </td>
                     <td>
-                        <span class="badge badge-hotel">🏨 上海大眾空港賓館</span><br>
-                        <small>（北樓）</small><br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海大眾空港賓館" target="_blank">📍 飯店地圖</a>
+                        <div class="spot-title">嘉興南湖景區 / 月河歷史街區</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 搭渡船遊南湖、參觀煙雨樓、漫步月河古街。<br>
+                                • 提醒：湖邊無遮蔽，請做好防曬與防蚊措施。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+Nanhu+Lake" target="_blank">📍 南湖景區</a> | 
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Yuehe+Historic+District+Jiaxing" target="_blank">📍 月河街區</a>
+                            </div>
+                        </details>
                     </td>
                 </tr>
                 <tr>
-                    <td><strong>18:00 - </strong></td>
-                    <td><span class="badge badge-spot">🍽️ 晚餐</span></td>
                     <td>
-                        <strong>晚餐：火鍋</strong><br>
-                        • 於浦東機場商圈或周邊享用火鍋
+                        <span class="time-text">11:30 - 13:00</span>
+                        <span class="badge badge-spot">🍽️ 午餐</span>
                     </td>
-                    <td></td>
+                    <td>
+                        <div class="spot-title">午餐：蘭州拉麵</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 於當地品嚐熱騰騰牛肉湯麵。
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">13:00 - 14:25</span>
+                        <span class="badge badge-trans">🚗 交通</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">前往嘉興南站</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 需於 13:45 前抵達嘉興南站進行安檢。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站地圖</a>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">14:25 - 14:59</span>
+                        <span class="badge badge-trans">🚄 鐵路</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">高鐵返回上海（G44 次）</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 嘉興南站 ➔ 上海虹橋站（車程約 34 分鐘）。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 虹橋站地圖</a>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">15:00 - 17:00</span>
+                        <span class="badge badge-trans">🚌 交通</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">虹橋 ➔ 浦東機場轉乘</div>
+                        <div class="hotel-tag">🏨 上海大眾空港賓館（北樓）</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 建議搭乘「機場一線」直達巴士（約 60-70 分鐘，設有專用行李層）或地鐵 2 號線。<br>
+                                • 飯店直通機場航站樓，方便次日清晨登機。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海大眾空港賓館" target="_blank">📍 飯店地圖</a>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">18:00 - </span>
+                        <span class="badge badge-spot">🍽️ 晚餐</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">晚餐：火鍋</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 於浦東機場商圈或周邊享用豐富火鍋。
+                            </div>
+                        </details>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -470,52 +593,60 @@
         <div class="summary-box">
             <strong>💡 Day 3 實用提醒：</strong>
             <ul>
-                <li><strong>機場巴士建議：</strong>虹橋至浦東機場搭乘「機場一線」直達巴士，設有行李專用放置層。</li>
-                <li><strong>住宿位置：</strong>上海大眾空港賓館位於機場內部，步行至 T2 出境櫃檯約 5-10 分鐘。</li>
+                <li>虹橋至浦東機場推薦「機場一線」直達巴士。</li>
+                <li>大眾空港賓館位於機場內，步行至 T2 僅需 5-10 分鐘。</li>
             </ul>
         </div>
     </div>
 
-    <!-- Day 4 頁籤內容 -->
+    <!-- Day 4 -->
     <div class="tab-content">
         <div class="weather-box">
-            <strong>☀️ Day 4 當地天氣與建議：</strong>
-            <br>晨間上海浦東與台北松山氣溫約 27°C - 33°C，整體天氣良好。
-            <ul>
-                <li><strong>搭機穿著：</strong>機艙內冷氣較強，建議隨身攜帶薄外套穿脫。</li>
-                <li><strong>返台預備：</strong>抵達松山機場後，戶外體感偏熱，記得補充水分。</li>
-            </ul>
+            <strong>☀️ 當地天氣：</strong>上海/台北（27°C - 33°C），氣候良好，機艙內備薄外套。
         </div>
 
         <table class="itinerary-table">
             <thead>
                 <tr>
-                    <th style="width: 15%;">時間</th>
-                    <th style="width: 15%;">類別</th>
-                    <th style="width: 45%;">行程與交通內容</th>
-                    <th style="width: 25%;">住宿 / 終點</th>
+                    <th class="time-col">時間 / 類別</th>
+                    <th class="info-col">行程內容與終點</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>06:45 - 07:10</strong></td>
-                    <td><span class="badge badge-trans">🚶 交通</span></td>
                     <td>
-                        <strong>前往浦東機場 T2 航站樓</strong><br>
-                        • 由空港賓館步行至航站樓辦理報到（約 5-10 分鐘）<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport+Terminal+2" target="_blank">📍 浦東 T2 航站樓地圖</a>
+                        <span class="time-text">06:45 - 07:10</span>
+                        <span class="badge badge-trans">🚶 交通</span>
                     </td>
-                    <td></td>
+                    <td>
+                        <div class="spot-title">前往浦東機場 T2 航站樓</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 空港賓館步行直達航站樓（約 5-10 分鐘）。<br>
+                                • 提醒：國際/港澳台航班請於起飛前 2 小時（07:10 前）完成報到。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport+Terminal+2" target="_blank">📍 浦東 T2 地圖</a>
+                            </div>
+                        </details>
+                    </td>
                 </tr>
                 <tr>
-                    <td><strong>09:10 - 11:00</strong></td>
-                    <td><span class="badge badge-trans">✈️ 交通</span></td>
                     <td>
-                        <strong>搭機返台（上海航空 FM801）</strong><br>
-                        • 上海浦東國際機場 T2 ➔ 台北松山機場 (TSA)<br>
-                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taipei+Songshan+Airport" target="_blank">📍 台北松山機場地圖</a>
+                        <span class="time-text">09:10 - 11:00</span>
+                        <span class="badge badge-trans">✈️ 交通</span>
                     </td>
-                    <td><span class="badge badge-hotel">🏠 返抵台北溫暖的家</span></td>
+                    <td>
+                        <div class="spot-title">搭機返台（上海航空 FM801）</div>
+                        <div class="hotel-tag">🏠 返抵台北松山機場 (TSA)</div>
+                        <details>
+                            <summary>查看詳情與提醒</summary>
+                            <div class="details-content">
+                                • 上海浦東 T2 ➔ 台北松山機場。<br>
+                                • 提醒：含肉類食品（如嘉興肉粽）嚴禁攜帶入境台灣。<br>
+                                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taipei+Songshan+Airport" target="_blank">📍 松山機場地圖</a>
+                            </div>
+                        </details>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -523,8 +654,8 @@
         <div class="summary-box">
             <strong>💡 Day 4 實用提醒：</strong>
             <ul>
-                <li><strong>報到時間：</strong>國際/港澳台航班請於起飛前 2 小時（07:10 前）完成報到與行李託運。</li>
-                <li><strong>動植物檢疫規定：</strong>含肉類食品（如嘉興肉粽）嚴禁攜帶入境台灣，請務必於搭機前處理完畢。</li>
+                <li>預留充足時間辦理託運與通關。</li>
+                <li>注意台灣動植物檢疫規定，勿帶肉類製品返台。</li>
             </ul>
         </div>
     </div>
