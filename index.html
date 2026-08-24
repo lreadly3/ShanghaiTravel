@@ -149,6 +149,7 @@
             margin-bottom: 4px;
         }
 
+        /* 標籤分類顏色 */
         .badge {
             display: inline-block;
             padding: 2px 6px;
@@ -159,8 +160,9 @@
             white-space: nowrap;
         }
 
-        .badge-trans { background-color: #ff9800; }
-        .badge-spot { background-color: #4caf50; }
+        .badge-trans { background-color: #3b82f6; } /* 交通：藍色 */
+        .badge-spot  { background-color: #4caf50; } /* 景點 & 活動：綠色 */
+        .badge-food  { background-color: #ea580c; } /* 餐飲：亮橘色 */
 
         .spot-title {
             font-size: 0.95rem;
@@ -233,7 +235,7 @@
             padding-left: 18px;
         }
 
-        /* 快速參考卡（重要資訊）專用樣式 */
+        /* 重要資訊專用卡片樣式 */
         .info-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -354,19 +356,33 @@
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">19:00 - </span>
-                        <span class="badge badge-spot">🍽️ 景點/晚餐</span>
+                        <span class="time-text">19:00 - 20:00</span>
+                        <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
-                        <div class="spot-title">岩姐燒烤 / 環球港 / 外灘夜景</div>
+                        <div class="spot-title">晚餐：岩姐燒烤</div>
                         <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海+岩姐燒烤" target="_blank">📍 岩姐燒烤</a>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Bund+Shanghai" target="_blank">📍 外灘地圖</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海+岩姐燒烤" target="_blank">📍 岩姐燒烤地圖</a>
                         </div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
-                                • 晚餐享用岩姐燒烤，餐後可至環球港購物或搭地鐵至外灘欣賞夜景。
+                                • 享用特色燒烤晚餐（用餐時間預計 1 小時）。
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="time-text">20:00 - 23:00</span>
+                        <span class="badge badge-spot">🎤 活動</span>
+                    </td>
+                    <td>
+                        <div class="spot-title">夜間活動：KTV 歡唱</div>
+                        <details>
+                            <summary>詳細內容</summary>
+                            <div class="details-content">
+                                • 晚餐後前往 KTV 歡唱至晚間 11:00，結束後返回飯店休息。
                             </div>
                         </details>
                     </td>
@@ -400,7 +416,7 @@
                 <tr>
                     <td>
                         <span class="time-text">09:00 - 12:00</span>
-                        <span class="badge badge-spot">📍 景點/購物</span>
+                        <span class="badge badge-spot">📍 景點</span>
                     </td>
                     <td>
                         <div class="spot-title">南京路步行街 & 吉伊卡哇旗艦店</div>
@@ -418,7 +434,7 @@
                 <tr>
                     <td>
                         <span class="time-text">12:00 - 14:30</span>
-                        <span class="badge badge-spot">🍽️ 午餐</span>
+                        <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
                         <div class="spot-title">午餐：海鮮自助餐</div>
@@ -452,7 +468,7 @@
                 <tr>
                     <td>
                         <span class="time-text">16:32 - 16:59</span>
-                        <span class="badge badge-trans">🚄 鐵路</span>
+                        <span class="badge badge-trans">🚄 交通</span>
                     </td>
                     <td>
                         <div class="spot-title">高鐵至嘉興（G1583 次）</div>
@@ -505,7 +521,7 @@
                 <tr>
                     <td>
                         <span class="time-text">22:00 - </span>
-                        <span class="badge badge-spot">🍽️ 宵夜</span>
+                        <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
                         <div class="spot-title">宵夜：冒菜</div>
@@ -566,7 +582,7 @@
                 <tr>
                     <td>
                         <span class="time-text">11:30 - 13:00</span>
-                        <span class="badge badge-spot">🍽️ 午餐</span>
+                        <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
                         <div class="spot-title">午餐：蘭州拉麵</div>
@@ -599,7 +615,7 @@
                 <tr>
                     <td>
                         <span class="time-text">14:25 - 14:59</span>
-                        <span class="badge badge-trans">🚄 鐵路</span>
+                        <span class="badge badge-trans">🚄 交通</span>
                     </td>
                     <td>
                         <div class="spot-title">高鐵返回上海（G44 次）</div>
@@ -637,7 +653,7 @@
                 <tr>
                     <td>
                         <span class="time-text">18:00 - </span>
-                        <span class="badge badge-spot">🍽️ 晚餐</span>
+                        <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
                         <div class="spot-title">晚餐：火鍋</div>
@@ -726,7 +742,7 @@
         </div>
     </div>
 
-    <!-- 重要資訊 (Quick Reference Card) -->
+    <!-- 重要資訊 -->
     <div class="tab-content">
         <div class="info-card">
             <h3>✈️ 航班預訂資訊</h3>
