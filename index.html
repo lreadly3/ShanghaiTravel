@@ -6,13 +6,13 @@
     <title>上海＋嘉興 4天3夜自由行</title>
     <style>
         :root {
-            --primary-color: #1e3a8a;
-            --accent-color: #d97706;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-color: #1e293b;
-            --link-color: #2563eb;
-            --border-color: #e2e8f0;
+            --primary-color: #4a5f70;   /* 沉穩質感莫蘭迪藍灰色 */
+            --accent-color: #d4a755;    /* 日式芥末黃棕色 */
+            --bg-color: #f7f4ef;        /* 日式淺米色底色 */
+            --card-bg: #faf8f5;      /* 淺和紙白 */
+            --text-color: #2c302e;      /* 柔和黑灰色字體 */
+            --link-color: #4a6fa5;      /* 低飽和藍色連結 */
+            --border-color: #e5dfd5;    /* 溫暖淺灰米色邊框 */
         }
 
         * {
@@ -35,16 +35,17 @@
 
         header {
             background-color: var(--primary-color);
-            color: white;
+            color: #faf8f5;
             padding: 16px;
             border-radius: 12px;
             margin-bottom: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
 
         header h1 {
             margin: 0 0 6px 0;
-            font-size: 2.2rem; /* 主標題再放大兩個字號 (1.8rem -> 2.2rem) */
+            font-size: 2.2rem;
+            font-weight: 600;
         }
 
         header p {
@@ -55,7 +56,7 @@
 
         .meta-info {
             margin-top: 10px;
-            background-color: rgba(255, 255, 255, 0.12);
+            background-color: rgba(255, 255, 255, 0.15);
             padding: 8px 12px;
             border-radius: 8px;
             font-size: 0.85rem;
@@ -74,9 +75,9 @@
             flex: 1;
             min-width: 75px;
             padding: 10px 4px;
-            background-color: #e2e8f0;
-            color: #475569;
-            border: none;
+            background-color: #ded7cd;
+            color: #423d37;
+            border: 1px solid #d1c8bb;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
@@ -86,9 +87,14 @@
             white-space: nowrap;
         }
 
+        .tab-btn:hover {
+            background-color: #d1c6b8;
+        }
+
         .tab-btn.active {
             background-color: var(--primary-color);
-            color: white;
+            color: #ffffff;
+            border-color: var(--primary-color);
         }
 
         .tab-content {
@@ -99,32 +105,41 @@
             display: block;
         }
 
+        /* 出發時間提示框 */
         .departure-box {
-            background-color: #fef3c7;
-            border-left: 4px solid var(--accent-color);
+            background-color: #e4eae7;
+            border-left: 4px solid #7a9187;
+            border-top: 1px solid #d2dcd7;
+            border-right: 1px solid #d2dcd7;
+            border-bottom: 1px solid #d2dcd7;
             padding: 10px 12px;
             border-radius: 6px;
             margin-bottom: 10px;
             font-size: 0.9rem;
-            color: #78350f;
+            color: #2a3d36;
         }
 
         .weather-box {
-            background-color: #e0f2fe;
-            border-left: 4px solid #0284c7;
+            background-color: #e0eaed;
+            border-left: 4px solid #5a7d8d;
+            border-top: 1px solid #d0deef;
+            border-right: 1px solid #d0deef;
+            border-bottom: 1px solid #d0deef;
             padding: 10px 12px;
             border-radius: 6px;
             margin-bottom: 16px;
             font-size: 0.85rem;
+            color: #233742;
         }
 
         .itinerary-table {
             width: 100%;
             border-collapse: collapse;
             background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
             margin-bottom: 16px;
         }
 
@@ -137,7 +152,7 @@
         }
 
         .itinerary-table th {
-            background-color: #f1f5f9;
+            background-color: #ece5dc;
             color: var(--primary-color);
             font-weight: bold;
             font-size: 0.85rem;
@@ -154,41 +169,42 @@
 
         .time-text {
             font-weight: bold;
-            color: #0f172a;
+            color: #2c302e;
             display: block;
             margin-bottom: 4px;
         }
 
+        /* 標籤樣式 */
         .badge {
             display: inline-block;
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: bold;
             font-size: 0.75rem;
-            color: white;
+            color: #ffffff;
             white-space: nowrap;
         }
 
-        .badge-trans { background-color: #3b82f6; }
-        .badge-spot  { background-color: #4caf50; }
-        .badge-food  { background-color: #ea580c; }
+        .badge-trans { background-color: #647a8d; } /* 交通：低飽和煙薰灰藍 */
+        .badge-act   { background-color: #728c74; } /* 活動：低飽和灰綠 */
+        .badge-food  { background-color: #ba7967; } /* 美食：低飽和磚紅 */
 
-        /* 高亮航班與高鐵班次專用樣式 */
+        /* 班次重點提示：改為柔和奶油黃色底色 */
         .highlight-code {
-            background-color: #fef08a;
-            color: #854d0e;
+            background-color: #fff3b0;
+            color: #5c4d10;
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: bold;
-            border: 1px solid #fde047;
+            border: 1px solid #f2e394;
             display: inline-block;
             margin: 2px 0;
         }
 
         .spot-title {
-            font-size: 0.95rem; /* 調回原本字號 */
+            font-size: 0.95rem;
             font-weight: bold;
-            color: #0f172a;
+            color: #2c302e;
             display: inline-block;
         }
 
@@ -208,24 +224,26 @@
         .spot-subnote {
             display: block;
             font-size: 0.8rem;
-            color: #64748b;
+            color: #6e7571;
             margin-top: 2px;
         }
 
+        /* 飯店標籤：淺紫色系 */
         .hotel-tag {
             margin-top: 2px;
             padding: 4px 8px;
-            background-color: #f3e8ff;
+            background-color: #efe9f5;
             border-radius: 6px;
-            font-size: 0.85rem; /* 調回原本字號 */
-            color: #581c87;
+            font-size: 0.85rem;
+            color: #4a3f5a;
             display: inline-block;
             font-weight: bold;
+            border: 1px solid #dfd5ea;
         }
 
         details {
             margin-top: 6px;
-            background-color: #f8fafc;
+            background-color: #f5f0eb;
             border: 1px solid var(--border-color);
             border-radius: 6px;
             font-size: 0.85rem;
@@ -242,21 +260,26 @@
 
         details[open] summary {
             border-bottom: 1px solid var(--border-color);
-            background-color: #f1f5f9;
+            background-color: #ece5dc;
         }
 
         .details-content {
             padding: 8px 10px;
-            color: #334155;
+            color: #4a504d;
         }
 
+        /* 底部實用提醒 */
         .summary-box {
-            background-color: #fffbe3;
+            background-color: #f7f0d8;
             border-left: 4px solid var(--accent-color);
+            border-top: 1px solid #ebdcb5;
+            border-right: 1px solid #ebdcb5;
+            border-bottom: 1px solid #ebdcb5;
             padding: 12px;
             border-radius: 6px;
             margin-top: 16px;
             font-size: 0.85rem;
+            color: #42371c;
         }
 
         .summary-box ul {
@@ -270,7 +293,13 @@
             border-radius: 10px;
             padding: 14px;
             margin-bottom: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        /* 飯店資訊卡片柔和紫微調 */
+        .info-card.hotel-card {
+            background-color: #f8f5fa;
+            border-color: #e5dceb;
         }
 
         .info-card h3 {
@@ -280,15 +309,20 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            border-bottom: 2px solid #f1f5f9;
+            border-bottom: 2px solid #ece5dc;
             padding-bottom: 6px;
+        }
+
+        .info-card.hotel-card h3 {
+            color: #5b4b6f;
+            border-bottom-color: #dfd5ea;
         }
 
         .info-card ul {
             margin: 0;
             padding-left: 18px;
             font-size: 0.88rem;
-            color: #334155;
+            color: #4a504d;
         }
 
         .info-card li {
@@ -297,7 +331,7 @@
 
         .phone-btn {
             display: inline-block;
-            background-color: #ef4444;
+            background-color: #a85858;
             color: white;
             padding: 2px 8px;
             border-radius: 4px;
@@ -405,7 +439,7 @@
                 <tr>
                     <td>
                         <span class="time-text">20:00 - 23:00</span>
-                        <span class="badge badge-spot">🎤 活動</span>
+                        <span class="badge badge-act">🎤 活動</span>
                     </td>
                     <td>
                         <div class="spot-title">月星環球港－自由港 KTV</div>
@@ -473,7 +507,7 @@
                 <tr>
                     <td>
                         <span class="time-text">14:30 - 16:00</span>
-                        <span class="badge badge-spot">📍 景點</span>
+                        <span class="badge badge-act">📍 活動</span>
                     </td>
                     <td>
                         <div class="spot-title">南京路步行街 & 吉伊卡哇旗艦店</div>
@@ -529,7 +563,7 @@
                 <tr>
                     <td>
                         <span class="time-text">18:00 - 22:00</span>
-                        <span class="badge badge-spot">🎤 活動</span>
+                        <span class="badge badge-act">🎤 活動</span>
                     </td>
                     <td>
                         <div class="spot-title">嘉興演唱會</div>
@@ -595,7 +629,7 @@
                 <tr>
                     <td>
                         <span class="time-text">09:00 - 11:30</span>
-                        <span class="badge badge-spot">📍 景點</span>
+                        <span class="badge badge-act">📍 活動</span>
                     </td>
                     <td>
                         <div class="spot-title">月河歷史街區</div>
@@ -624,7 +658,7 @@
                         <details>
                             <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 道地清真風味，推薦現拉手撕牛肉麵、新疆羊肉串與涼拌小菜。<br>
+                                • 道地清真風味，推薦現拉手撕牛肉麵、新聞羊肉串與涼拌小菜。<br>
                                 • 出餐快速，適合搭高鐵前的午餐選擇。
                             </div>
                         </details>
@@ -652,7 +686,7 @@
                 <tr>
                     <td>
                         <span class="time-text">15:00 - 17:00</span>
-                        <span class="badge badge-spot">🎬 活動</span>
+                        <span class="badge badge-act">🎬 活動</span>
                     </td>
                     <td>
                         <div class="spot-title">虹橋天地電影院</div>
@@ -790,7 +824,7 @@
     <!-- 重要資訊 -->
     <div class="tab-content">
         <div class="info-card">
-            <h3>✈️ 航班與高鐵班次摘要</h3>
+            <h3>✈️ 交通資訊</h3>
             <ul>
                 <li><strong>去程航班：</strong>7/31 中國國際航空 CA196 (TPE ➔ PVG, 14:40-16:45)</li>
                 <li><strong>去程高鐵：</strong>8/01 高鐵 G1583 次 (上海虹橋 ➔ 嘉興南, 16:30-17:00)</li>
@@ -799,8 +833,8 @@
             </ul>
         </div>
 
-        <div class="info-card">
-            <h3>🏨 飯店電話與地址</h3>
+        <div class="info-card hotel-card">
+            <h3>🏨 飯店資訊</h3>
             <ul>
                 <li>
                     <strong>上海舒芙酒店（金沙江路店）</strong><br>
@@ -824,16 +858,16 @@
         </div>
 
         <div class="info-card">
-            <h3>🚨 當地緊急求助電話</h3>
+            <h3>🚨 緊急電話</h3>
             <ul>
-                <li>警察：<strong style="color:#ef4444;">110</strong> <a class="phone-btn" href="tel:110">撥打</a></li>
-                <li>消防：<strong style="color:#ef4444;">119</strong> <a class="phone-btn" href="tel:119">撥打</a></li>
-                <li>醫療急救：<strong style="color:#ef4444;">120</strong> <a class="phone-btn" href="tel:120">撥打</a></li>
+                <li>警察：<strong style="color:#a85858;">110</strong> <a class="phone-btn" href="tel:110">撥打</a></li>
+                <li>消防：<strong style="color:#a85858;">119</strong> <a class="phone-btn" href="tel:119">撥打</a></li>
+                <li>醫療急救：<strong style="color:#a85858;">120</strong> <a class="phone-btn" href="tel:120">撥打</a></li>
             </ul>
         </div>
 
         <div class="info-card">
-            <h3>🏛️ 駐外／海基會緊急聯絡</h3>
+            <h3>🏛️ 駐外緊急協助</h3>
             <ul>
                 <li><strong>海基會防偽與緊急服務專線：</strong><br>+886 2-2533-9995（24小時）</li>
                 <li><strong>海基會台商/急難救助熱線：</strong><br>+886 2-2718-7373</li>
