@@ -99,6 +99,16 @@
             display: block;
         }
 
+        .departure-box {
+            background-color: #fef3c7;
+            border-left: 4px solid var(--accent-color);
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #78350f;
+        }
+
         .weather-box {
             background-color: #e0f2fe;
             border-left: 4px solid #0284c7;
@@ -162,6 +172,18 @@
         .badge-trans { background-color: #3b82f6; }
         .badge-spot  { background-color: #4caf50; }
         .badge-food  { background-color: #ea580c; }
+
+        /* 高亮航班與高鐵班次專用樣式 */
+        .highlight-code {
+            background-color: #fef08a;
+            color: #854d0e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid #fde047;
+            display: inline-block;
+            margin: 2px 0;
+        }
 
         .spot-title {
             font-size: 0.95rem;
@@ -307,6 +329,9 @@
 
     <!-- Day 1 -->
     <div class="tab-content active">
+        <div class="departure-box">
+            <strong>⏰ 預計出發時間：</strong>11:30（從土城裕民路出發，車程約 45 分鐘前往桃園機場 T2）
+        </div>
         <div class="weather-box">
             <strong>☀️ 當地天氣：</strong>上海（29°C - 35°C），高溫防暑，午後易有雷陣雨。
         </div>
@@ -326,7 +351,7 @@
                     </td>
                     <td>
                         <div class="spot-title">桃園國際機場 (TPE) T2</div>
-                        <span class="spot-subnote">目的地：上海浦東機場 (PVG) T2 ｜ 航班：國航 CA196 (14:40-16:45)</span>
+                        <span class="spot-subnote">目的地：上海浦東機場 (PVG) T2 ｜ 航班：<span class="highlight-code">✈️ 國航 CA196 (14:40-16:45)</span></span>
                         <div>
                             <a class="map-link" href="https://maps.app.goo.gl/Z7UPUcd6ZLMrrR3X8" target="_blank">📍 桃園國際機場 (TPE) T2</a>
                         </div>
@@ -383,11 +408,16 @@
                         <span class="badge badge-spot">🎤 活動</span>
                     </td>
                     <td>
-                        <div class="spot-title">KTV 歡唱</div>
+                        <div class="spot-title">月星環球港－自由港 KTV</div>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=月星環球港+自由港KTV" target="_blank">📍 月星環球港 自由港KTV</a>
+                        </div>
                         <details>
                             <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 晚餐後前往飯店附近 KTV 歡唱至晚間 11:00，結束後返回飯店休息。
+                                • 地點：上海月星環球港商場內。<br>
+                                • 交通：鄰近舒芙酒店，可步行或搭乘短程計程車前往。<br>
+                                • 晚餐燒烤後前往歡唱至晚間 11:00，結束後返回飯店休息。
                             </div>
                         </details>
                     </td>
@@ -406,6 +436,9 @@
 
     <!-- Day 2 -->
     <div class="tab-content">
+        <div class="departure-box">
+            <strong>⏰ 預計出發時間：</strong>11:15（自上海舒芙酒店退房出發，搭地鐵至南京路約 45 分鐘）
+        </div>
         <div class="weather-box">
             <strong>☀️ 當地天氣：</strong>上海/嘉興（31°C - 36°C），體感悶熱，注意防曬降溫。
         </div>
@@ -462,7 +495,7 @@
                     </td>
                     <td>
                         <div class="spot-title">上海虹橋站</div>
-                        <span class="spot-subnote">目的地：嘉興南站 ｜ 高鐵：G1583 次（16:30 ➔ 17:00）</span>
+                        <span class="spot-subnote">目的地：嘉興南站 ｜ 高鐵：<span class="highlight-code">🚄 G1583 次 (16:30 ➔ 17:00)</span></span>
                         <div>
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 上海虹橋站</a>
                         </div>
@@ -536,7 +569,7 @@
         <div class="summary-box">
             <strong>💡 Day 2 實用提醒：</strong>
             <ul>
-                <li>高鐵虹橋站安檢嚴格，16:30 車次請最晚 15:30 抵達。</li>
+                <li>高鐵虹橋站安檢嚴格，<span class="highlight-code">G1583</span> 車次請最晚 15:30 抵達。</li>
                 <li>演唱會採實名制，隨身攜帶台胞證原件。</li>
             </ul>
         </div>
@@ -544,6 +577,9 @@
 
     <!-- Day 3 -->
     <div class="tab-content">
+        <div class="departure-box">
+            <strong>⏰ 預計出發時間：</strong>08:30（自嘉興博雅花園酒店出發，乘車前往月河歷史街區約 30 分鐘）
+        </div>
         <div class="weather-box">
             <strong>☀️ 當地天氣：</strong>嘉興/上海，景區戶外多水域，注意防曬防蚊及午後雨。
         </div>
@@ -601,7 +637,7 @@
                     </td>
                     <td>
                         <div class="spot-title">嘉興南站</div>
-                        <span class="spot-subnote">目的地：上海虹橋站 ｜ 高鐵：G44 次（14:30 ➔ 15:00）</span>
+                        <span class="spot-subnote">目的地：上海虹橋站 ｜ 高鐵：<span class="highlight-code">🚄 G44 次 (14:30 ➔ 15:00)</span></span>
                         <div>
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站</a>
                         </div>
@@ -685,6 +721,9 @@
 
     <!-- Day 4 -->
     <div class="tab-content">
+        <div class="departure-box">
+            <strong>⏰ 預計出發時間：</strong>06:30（自上海大眾空港賓館退房，步行 5-10 分鐘至浦東機場 T2）
+        </div>
         <div class="weather-box">
             <strong>☀️ 當地天氣：</strong>上海/台北（27°C - 33°C），氣候良好，機艙內備薄外套。
         </div>
@@ -723,7 +762,7 @@
                     </td>
                     <td>
                         <div class="spot-title">台北松山機場 (TSA)</div>
-                        <span class="spot-subnote">航班：上海航空 FM801 (PVG ➔ TSA, 09:10-11:00)</span>
+                        <span class="spot-subnote">航班：<span class="highlight-code">✈️ 上海航空 FM801 (PVG ➔ TSA, 09:10-11:00)</span></span>
                         <div>
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taipei+Songshan+Airport" target="_blank">📍 台北松山機場 (TSA)</a>
                         </div>
@@ -751,10 +790,12 @@
     <!-- 重要資訊 -->
     <div class="tab-content">
         <div class="info-card">
-            <h3>✈️ 航班預訂資訊</h3>
+            <h3>✈️ 航班與高鐵班次摘要</h3>
             <ul>
-                <li><strong>去程：</strong>7/31 中國國際航空 CA196 (TPE ➔ PVG)</li>
-                <li><strong>回程：</strong>8/03 上海航空 FM801 (PVG ➔ TSA)</li>
+                <li><strong>去程航班：</strong>7/31 <span class="highlight-code">✈️ 中國國際航空 CA196</span> (TPE ➔ PVG, 14:40-16:45)</li>
+                <li><strong>去程高鐵：</strong>8/01 <span class="highlight-code">🚄 高鐵 G1583 次</span> (上海虹橋 ➔ 嘉興南, 16:30-17:00)</li>
+                <li><strong>回程高鐵：</strong>8/02 <span class="highlight-code">🚄 高鐵 G44 次</span> (嘉興南 ➔ 上海虹橋, 14:30-15:00)</li>
+                <li><strong>回程航班：</strong>8/03 <span class="highlight-code">✈️ 上海航空 FM801</span> (PVG ➔ TSA, 09:10-11:00)</li>
             </ul>
         </div>
 
