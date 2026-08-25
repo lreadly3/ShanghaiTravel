@@ -149,7 +149,6 @@
             margin-bottom: 4px;
         }
 
-        /* 標籤分類顏色 */
         .badge {
             display: inline-block;
             padding: 2px 6px;
@@ -160,14 +159,21 @@
             white-space: nowrap;
         }
 
-        .badge-trans { background-color: #3b82f6; } /* 交通：藍色 */
-        .badge-spot  { background-color: #4caf50; } /* 景點 & 活動：綠色 */
-        .badge-food  { background-color: #ea580c; } /* 餐飲：亮橘色 */
+        .badge-trans { background-color: #3b82f6; }
+        .badge-spot  { background-color: #4caf50; }
+        .badge-food  { background-color: #ea580c; }
 
         .spot-title {
             font-size: 0.95rem;
             font-weight: bold;
             color: #1e293b;
+        }
+
+        .spot-subnote {
+            display: block;
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 2px;
         }
 
         .hotel-tag {
@@ -193,7 +199,6 @@
             margin-right: 8px;
         }
 
-        /* 可折疊詳情樣式 */
         details {
             margin-top: 6px;
             background-color: #f8fafc;
@@ -235,7 +240,6 @@
             padding-left: 18px;
         }
 
-        /* 重要資訊專用卡片樣式 */
         .info-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -291,7 +295,6 @@
         </div>
     </header>
 
-    <!-- Tab 切換按鈕 -->
     <div class="tab-nav">
         <button class="tab-btn active" onclick="switchTab(0)">Day 1</button>
         <button class="tab-btn" onclick="switchTab(1)">Day 2</button>
@@ -310,7 +313,7 @@
             <thead>
                 <tr>
                     <th class="time-col">時間 / 類別</th>
-                    <th class="info-col">行程內容與住宿</th>
+                    <th class="info-col">地點與內容</th>
                 </tr>
             </thead>
             <tbody>
@@ -320,14 +323,14 @@
                         <span class="badge badge-trans">✈️ 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">抵達上海（國航 CA196）</div>
+                        <div class="spot-title">上海浦東國際機場 (PVG) T2</div>
+                        <span class="spot-subnote">航班：國航 CA196 (TPE ➔ PVG)</span>
                         <div class="map-links-container">
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport" target="_blank">📍 浦東機場地圖</a>
                         </div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
-                                • 路線：桃園國際機場 T2 ➔ 上海浦東國際機場 T2<br>
                                 • 預估入境與提領行李約需 45-60 分鐘。<br>
                                 • 提醒：過關請備妥台胞證原件。
                             </div>
@@ -340,7 +343,6 @@
                         <span class="badge badge-trans">🚗 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">前往飯店 Check-in</div>
                         <div><span class="hotel-tag">🏨 上海舒芙酒店（金沙江路店）</span></div>
                         <div class="map-links-container">
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海舒芙酒店" target="_blank">📍 飯店地圖</a>
@@ -360,14 +362,14 @@
                         <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
-                        <div class="spot-title">晚餐：岩姐燒烤</div>
+                        <div class="spot-title">岩姐燒烤</div>
                         <div class="map-links-container">
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海+岩姐燒烤" target="_blank">📍 岩姐燒烤地圖</a>
                         </div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
-                                • 享用特色燒烤晚餐（用餐時間預計 1 小時）。
+                                • 享用特色燒烤晚餐（預計 1 小時）。
                             </div>
                         </details>
                     </td>
@@ -378,11 +380,11 @@
                         <span class="badge badge-spot">🎤 活動</span>
                     </td>
                     <td>
-                        <div class="spot-title">夜間活動：KTV 歡唱</div>
+                        <div class="spot-title">KTV 歡唱</div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
-                                • 晚餐後前往 KTV 歡唱至晚間 11:00，結束後返回飯店休息。
+                                • 晚餐後 KTV 歡唱至晚間 11:00，結束後返回飯店休息。
                             </div>
                         </details>
                     </td>
@@ -409,7 +411,7 @@
             <thead>
                 <tr>
                     <th class="time-col">時間 / 類別</th>
-                    <th class="info-col">行程內容與住宿</th>
+                    <th class="info-col">地點與內容</th>
                 </tr>
             </thead>
             <tbody>
@@ -437,7 +439,7 @@
                         <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
-                        <div class="spot-title">午餐：海鮮自助餐</div>
+                        <div class="spot-title">南京路海鮮自助餐</div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
@@ -448,37 +450,21 @@
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">14:30 - 16:32</span>
-                        <span class="badge badge-trans">🚗 交通</span>
+                        <span class="time-text">14:30 - 16:59</span>
+                        <span class="badge badge-trans">🚄 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">移動前往上海虹橋站</div>
+                        <div class="spot-title">嘉興南站</div>
+                        <span class="spot-subnote">高鐵：G1583 次（上海虹橋 16:32 ➔ 嘉興南 16:59）</span>
                         <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 虹橋站地圖</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 虹橋站</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站</a>
                         </div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
                                 • 需回飯店取行李並轉乘至虹橋站。<br>
-                                • 提醒：虹橋站安檢耗時，務必於 15:45 前抵達車站。
-                            </div>
-                        </details>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span class="time-text">16:32 - 16:59</span>
-                        <span class="badge badge-trans">🚄 交通</span>
-                    </td>
-                    <td>
-                        <div class="spot-title">高鐵至嘉興（G1583 次）</div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站地圖</a>
-                        </div>
-                        <details>
-                            <summary>詳細內容</summary>
-                            <div class="details-content">
-                                • 上海虹橋站 ➔ 嘉興南站（車程約 27 分鐘）。
+                                • 提醒：虹橋站安檢耗時，務必於 15:45 前抵達虹橋站。
                             </div>
                         </details>
                     </td>
@@ -489,7 +475,6 @@
                         <span class="badge badge-trans">🚗 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">前往嘉興飯店 Check-in</div>
                         <div><span class="hotel-tag">🏨 嘉興博雅花園酒店</span></div>
                         <div class="map-links-container">
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興博雅花園酒店" target="_blank">📍 飯店地圖</a>
@@ -508,7 +493,7 @@
                         <span class="badge badge-spot">🎤 活動</span>
                     </td>
                     <td>
-                        <div class="spot-title">嘉興演唱會之夜</div>
+                        <div class="spot-title">嘉興演唱會</div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
@@ -524,7 +509,7 @@
                         <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
-                        <div class="spot-title">宵夜：冒菜</div>
+                        <div class="spot-title">演唱會周邊冒菜</div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
@@ -555,7 +540,7 @@
             <thead>
                 <tr>
                     <th class="time-col">時間 / 類別</th>
-                    <th class="info-col">行程內容與住宿</th>
+                    <th class="info-col">地點與內容</th>
                 </tr>
             </thead>
             <tbody>
@@ -585,7 +570,7 @@
                         <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
-                        <div class="spot-title">午餐：蘭州拉麵</div>
+                        <div class="spot-title">蘭州拉麵</div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
@@ -596,13 +581,15 @@
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">13:00 - 14:25</span>
-                        <span class="badge badge-trans">🚗 交通</span>
+                        <span class="time-text">13:00 - 14:59</span>
+                        <span class="badge badge-trans">🚄 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">前往嘉興南站</div>
+                        <div class="spot-title">上海虹橋站</div>
+                        <span class="spot-subnote">高鐵：G44 次（嘉興南 14:25 ➔ 虹橋 14:59）</span>
                         <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站地圖</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 虹橋站</a>
                         </div>
                         <details>
                             <summary>詳細內容</summary>
@@ -614,29 +601,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">14:25 - 14:59</span>
-                        <span class="badge badge-trans">🚄 交通</span>
-                    </td>
-                    <td>
-                        <div class="spot-title">高鐵返回上海（G44 次）</div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 虹橋站地圖</a>
-                        </div>
-                        <details>
-                            <summary>詳細內容</summary>
-                            <div class="details-content">
-                                • 嘉興南站 ➔ 上海虹橋站（車程約 34 分鐘）。
-                            </div>
-                        </details>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         <span class="time-text">15:00 - 17:00</span>
                         <span class="badge badge-spot">🎬 活動</span>
                     </td>
                     <td>
-                        <div class="spot-title">虹橋天地：看電影</div>
+                        <div class="spot-title">虹橋天地電影院</div>
                         <div class="map-links-container">
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Hub+Shanghai+Hongqiao" target="_blank">📍 虹橋天地地圖</a>
                         </div>
@@ -654,7 +623,7 @@
                         <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
-                        <div class="spot-title">晚餐：虹橋天地火鍋</div>
+                        <div class="spot-title">虹橋天地火鍋</div>
                         <div class="map-links-container">
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=虹橋天地+火鍋" target="_blank">📍 虹橋天地商圈</a>
                         </div>
@@ -672,16 +641,16 @@
                         <span class="badge badge-trans">🚆 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">搭乘市域鐵路前往浦東機場</div>
                         <div><span class="hotel-tag">🏨 上海大眾空港賓館（北樓）</span></div>
+                        <span class="spot-subnote">交通：市域鐵路（機場聯絡線/機場線）</span>
                         <div class="map-links-container">
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海大眾空港賓館" target="_blank">📍 飯店地圖</a>
                         </div>
                         <details>
                             <summary>詳細內容</summary>
                             <div class="details-content">
-                                • 由虹橋樞紐搭乘「市域鐵路（機場聯絡線/機場線）」直達浦東國際機場。<br>
-                                • 出站後步行至連廊辦理入住，方便次日清晨直接登機。
+                                • 由虹橋樞紐搭乘「市域鐵路」直達浦東國際機場。<br>
+                                • 出站後步行至連廊辦理入住，方便次日清晨辦理登機。
                             </div>
                         </details>
                     </td>
@@ -709,7 +678,7 @@
             <thead>
                 <tr>
                     <th class="time-col">時間 / 類別</th>
-                    <th class="info-col">行程內容與終點</th>
+                    <th class="info-col">地點與內容</th>
                 </tr>
             </thead>
             <tbody>
@@ -719,7 +688,7 @@
                         <span class="badge badge-trans">🚶 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">前往浦東機場 T2 航站樓</div>
+                        <div class="spot-title">浦東機場 T2 航站樓</div>
                         <div class="map-links-container">
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport+Terminal+2" target="_blank">📍 浦東 T2 地圖</a>
                         </div>
@@ -738,8 +707,8 @@
                         <span class="badge badge-trans">✈️ 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">搭機返台（上海航空 FM801）</div>
-                        <div><span class="hotel-tag">🏠 返抵台北松山機場 (TSA)</span></div>
+                        <div class="spot-title">台北松山機場 (TSA)</div>
+                        <span class="spot-subnote">航班：上海航空 FM801 (PVG ➔ TSA)</span>
                         <div class="map-links-container">
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taipei+Songshan+Airport" target="_blank">📍 松山機場地圖</a>
                         </div>
@@ -799,7 +768,7 @@
             <h3>🚨 當地緊急求助電話</h3>
             <ul>
                 <li>匪警（警察）：<strong style="color:#ef4444;">110</strong> <a class="phone-btn" href="tel:110">撥打</a></li>
-                <li>(消防)：<strong style="color:#ef4444;">119</strong> <a class="phone-btn" href="tel:119">撥打</a></li>
+                <li>消防：<strong style="color:#ef4444;">119</strong> <a class="phone-btn" href="tel:119">撥打</a></li>
                 <li>醫療急救（救護車）：<strong style="color:#ef4444;">120</strong> <a class="phone-btn" href="tel:120">撥打</a></li>
             </ul>
         </div>
