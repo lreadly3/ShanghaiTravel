@@ -20,7 +20,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.5;
@@ -40,6 +40,7 @@
             border-radius: 12px;
             margin-bottom: 16px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            text-align: center; /* 主標題區塊文字置中 */
         }
 
         header h1 {
@@ -50,8 +51,9 @@
 
         header p {
             margin: 0;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             opacity: 0.9;
+            letter-spacing: 0.5px;
         }
 
         .meta-info {
@@ -59,7 +61,9 @@
             background-color: rgba(255, 255, 255, 0.15);
             padding: 8px 12px;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 1.15rem;
+            font-weight: bold;
+            display: inline-block; /* 讓置中時區塊寬度貼合內容 */
         }
 
         .tab-nav {
@@ -81,10 +85,21 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.95rem; 
             transition: all 0.2s ease;
             text-align: center;
             white-space: nowrap;
+        }
+
+        .tab-btn.info-tab-btn {
+            background-color: #f2ede4;
+            color: #423d37;
+            border-color: #e2d8cc;
+            font-size: 0.85rem;
+        }
+
+        .tab-btn.info-tab-btn:hover {
+            background-color: #e8e1d5;
         }
 
         .tab-btn:hover {
@@ -105,7 +120,6 @@
             display: block;
         }
 
-        /* 出發時間提示框 */
         .departure-box {
             background-color: #e4eae7;
             border-left: 4px solid #7a9187;
@@ -174,7 +188,6 @@
             margin-bottom: 4px;
         }
 
-        /* 標籤樣式 */
         .badge {
             display: inline-block;
             padding: 2px 6px;
@@ -185,11 +198,11 @@
             white-space: nowrap;
         }
 
-        .badge-trans { background-color: #647a8d; } /* 交通：低飽和煙薰灰藍 */
-        .badge-act   { background-color: #728c74; } /* 活動：低飽和灰綠 */
-        .badge-food  { background-color: #ba7967; } /* 美食：低飽和磚紅 */
+        .badge-trans { background-color: #647a8d; }
+        .badge-act   { background-color: #728c74; }
+        .badge-food  { background-color: #ba7967; }
+        .badge-stay  { background-color: #7d6b91; }
 
-        /* 班次重點提示：柔和奶油黃色底色 */
         .highlight-code {
             background-color: #fff3b0;
             color: #5c4d10;
@@ -206,6 +219,14 @@
             font-weight: bold;
             color: #2c302e;
             display: inline-block;
+        }
+
+        /* Google Maps 標準圖標樣式 */
+        .map-icon {
+            width: 14px;
+            height: 14px;
+            vertical-align: -2px;
+            margin-right: 3px;
         }
 
         .map-link {
@@ -228,7 +249,6 @@
             margin-top: 2px;
         }
 
-        /* 飯店標籤：淺紫色系 */
         .hotel-tag {
             margin-top: 2px;
             padding: 4px 8px;
@@ -268,7 +288,6 @@
             color: #4a504d;
         }
 
-        /* 底部實用提醒 */
         .summary-box {
             background-color: #f7f0d8;
             border-left: 4px solid var(--accent-color);
@@ -296,12 +315,6 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        /* 飯店資訊卡片柔和紫微調 */
-        .info-card.hotel-card {
-            background-color: #f8f5fa;
-            border-color: #e5dceb;
-        }
-
         .info-card h3 {
             margin: 0 0 8px 0;
             font-size: 1rem;
@@ -311,11 +324,6 @@
             gap: 6px;
             border-bottom: 2px solid #ece5dc;
             padding-bottom: 6px;
-        }
-
-        .info-card.hotel-card h3 {
-            color: #5b4b6f;
-            border-bottom-color: #dfd5ea;
         }
 
         .info-card ul {
@@ -335,18 +343,18 @@
 <div class="container">
     <header>
         <h1>上海＋嘉興 4天3夜自由行</h1>
-        <p>高鐵快閃 ‧ 嘉興演唱會 ‧ 美食購物漫遊</p>
+        <p>高鐵快閃 · 嘉興演唱會 · 美食漫遊</p>
         <div class="meta-info">
-            <strong>旅行日期：</strong>2026/07/31 – 2026/08/03
+            2026/07/31 – 2026/08/03
         </div>
     </header>
 
     <div class="tab-nav">
-        <button class="tab-btn active" onclick="switchTab(0)">Day 1</button>
-        <button class="tab-btn" onclick="switchTab(1)">Day 2</button>
-        <button class="tab-btn" onclick="switchTab(2)">Day 3</button>
-        <button class="tab-btn" onclick="switchTab(3)">Day 4</button>
-        <button class="tab-btn" onclick="switchTab(4)">重要資訊</button>
+        <button class="tab-btn active" onclick="switchTab(0)">Day 1<br><span style="font-size: 0.95rem; font-weight: normal;">7/31</span></button>
+        <button class="tab-btn" onclick="switchTab(1)">Day 2<br><span style="font-size: 0.95rem; font-weight: normal;">8/1</span></button>
+        <button class="tab-btn" onclick="switchTab(2)">Day 3<br><span style="font-size: 0.95rem; font-weight: normal;">8/2</span></button>
+        <button class="tab-btn" onclick="switchTab(3)">Day 4<br><span style="font-size: 0.95rem; font-weight: normal;">8/3</span></button>
+        <button class="tab-btn info-tab-btn" onclick="switchTab(4)">重要資訊</button>
     </div>
 
     <!-- Day 1 -->
@@ -369,13 +377,13 @@
                 <tr>
                     <td>
                         <span class="time-text">14:30 - 17:00</span>
-                        <span class="badge badge-trans">✈️ 交通</span>
+                        <span class="badge badge-trans">交通</span>
                     </td>
                     <td>
                         <div class="spot-title">桃園國際機場 (TPE) T2</div>
-                        <span class="spot-subnote">目的地：上海浦東機場 (PVG) T2 ｜ 航班：<span class="highlight-code">✈️ 國航 CA196 (14:40-16:45)</span></span>
+                        <span class="spot-subnote">目的地：上海浦東機場 (PVG) T2 ｜ 航班：<span class="highlight-code">國航 CA196 (14:40-16:45)</span></span>
                         <div>
-                            <a class="map-link" href="https://maps.app.goo.gl/Z7UPUcd6ZLMrrR3X8" target="_blank">📍 桃園國際機場 (TPE) T2</a>
+                            <a class="map-link" href="https://maps.app.goo.gl/Z7UPUcd6ZLMrrR3X8" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>桃園國際機場 (TPE) T2</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -389,12 +397,12 @@
                 <tr>
                     <td>
                         <span class="time-text">17:00 - 19:00</span>
-                        <span class="badge badge-trans">🚗 交通</span>
+                        <span class="badge badge-stay">住宿</span>
                     </td>
                     <td>
-                        <div class="hotel-tag">🏨 上海舒芙酒店（金沙江路店）</div>
+                        <div class="hotel-tag">上海舒芙酒店（金沙江路店）</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海舒芙酒店" target="_blank">📍 上海舒芙酒店（金沙江路店）</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海舒芙酒店" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>上海舒芙酒店（金沙江路店）</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -408,12 +416,12 @@
                 <tr>
                     <td>
                         <span class="time-text">19:00 - 20:00</span>
-                        <span class="badge badge-food">🍽️ 美食</span>
+                        <span class="badge badge-food">美食</span>
                     </td>
                     <td>
                         <div class="spot-title">岩姐燒烤</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海+岩姐燒烤" target="_blank">📍 岩姐燒烤</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海+岩姐燒烤" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>岩姐燒烤</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -427,12 +435,12 @@
                 <tr>
                     <td>
                         <span class="time-text">20:00 - 23:00</span>
-                        <span class="badge badge-act">🎤 活動</span>
+                        <span class="badge badge-act">活動</span>
                     </td>
                     <td>
                         <div class="spot-title">月星環球港－自由港 KTV</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=月星環球港+自由港KTV" target="_blank">📍 月星環球港 自由港KTV</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=月星環球港+自由港KTV" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>月星環球港 自由港KTV</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -476,12 +484,12 @@
                 <tr>
                     <td>
                         <span class="time-text">12:00 - 14:30</span>
-                        <span class="badge badge-food">🍽️ 美食</span>
+                        <span class="badge badge-food">美食</span>
                     </td>
                     <td>
                         <div class="spot-title">南京路海鮮自助餐</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Pedestrian+Street+Shanghai" target="_blank">📍 南京路海鮮自助餐</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Pedestrian+Street+Shanghai" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>南京路海鮮自助餐</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -495,12 +503,12 @@
                 <tr>
                     <td>
                         <span class="time-text">14:30 - 16:00</span>
-                        <span class="badge badge-act">📍 活動</span>
+                        <span class="badge badge-act">活動</span>
                     </td>
                     <td>
                         <div class="spot-title">南京路步行街 & 吉伊卡哇旗艦店</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Pedestrian+Street+Shanghai" target="_blank">📍 南京路步行街</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Pedestrian+Street+Shanghai" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>南京路步行街</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -513,13 +521,13 @@
                 <tr>
                     <td>
                         <span class="time-text">16:00 - 17:00</span>
-                        <span class="badge badge-trans">🚄 交通</span>
+                        <span class="badge badge-trans">交通</span>
                     </td>
                     <td>
                         <div class="spot-title">上海虹橋站</div>
-                        <span class="spot-subnote">目的地：嘉興南站 ｜ 高鐵：<span class="highlight-code">🚄 G1583 次 (16:30 ➔ 17:00)</span></span>
+                        <span class="spot-subnote">目的地：嘉興南站 ｜ 高鐵：<span class="highlight-code">G1583 次 (16:30 ➔ 17:00)</span></span>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 上海虹橋站</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>上海虹橋站</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -533,12 +541,12 @@
                 <tr>
                     <td>
                         <span class="time-text">17:00 - 18:00</span>
-                        <span class="badge badge-trans">🚗 交通</span>
+                        <span class="badge badge-stay">住宿</span>
                     </td>
                     <td>
-                        <div class="hotel-tag">🏨 嘉興博雅花園酒店</div>
+                        <div class="hotel-tag">嘉興博雅花園酒店</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興博雅花園酒店" target="_blank">📍 嘉興博雅花園酒店</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興博雅花園酒店" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>嘉興博雅花園酒店</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -551,12 +559,12 @@
                 <tr>
                     <td>
                         <span class="time-text">18:00 - 22:00</span>
-                        <span class="badge badge-act">🎤 活動</span>
+                        <span class="badge badge-act">活動</span>
                     </td>
                     <td>
                         <div class="spot-title">嘉興演唱會</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+Sports+Center" target="_blank">📍 嘉興市體育中心</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+Sports+Center" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>嘉興市體育中心</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -571,7 +579,7 @@
                 <tr>
                     <td>
                         <span class="time-text">22:00 - 23:30</span>
-                        <span class="badge badge-food">🍽️ 美食</span>
+                        <span class="badge badge-food">美食</span>
                     </td>
                     <td>
                         <div class="spot-title">飯店宵夜</div>
@@ -591,7 +599,7 @@
         <div class="summary-box">
             <strong>💡 Day 2 實用提醒：</strong>
             <ul>
-                <li>高鐵虹橋站安檢嚴格，<span class="highlight-code">G1583</span> 車次請最晚 15:30 抵達。</li>
+                <li>高鐵虹橋站安檢嚴格，請最晚 15:30 抵達。</li>
                 <li>演唱會採實名制，隨身攜帶台胞證原件。</li>
             </ul>
         </div>
@@ -617,12 +625,12 @@
                 <tr>
                     <td>
                         <span class="time-text">09:00 - 11:30</span>
-                        <span class="badge badge-act">📍 活動</span>
+                        <span class="badge badge-act">活動</span>
                     </td>
                     <td>
                         <div class="spot-title">月河歷史街區</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Yuehe+Historic+District+Jiaxing" target="_blank">📍 月河歷史街區</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Yuehe+Historic+District+Jiaxing" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>月河歷史街區</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -636,12 +644,12 @@
                 <tr>
                     <td>
                         <span class="time-text">11:30 - 13:00</span>
-                        <span class="badge badge-food">🍽️ 美食</span>
+                        <span class="badge badge-food">美食</span>
                     </td>
                     <td>
                         <div class="spot-title">蘭州拉麵</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興+南湖天地" target="_blank">📍 南湖天地</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興+南湖天地" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>南湖天地</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -655,13 +663,13 @@
                 <tr>
                     <td>
                         <span class="time-text">13:00 - 15:00</span>
-                        <span class="badge badge-trans">🚄 交通</span>
+                        <span class="badge badge-trans">交通</span>
                     </td>
                     <td>
                         <div class="spot-title">嘉興南站</div>
-                        <span class="spot-subnote">目的地：上海虹橋站 ｜ 高鐵：<span class="highlight-code">🚄 G44 次 (14:30 ➔ 15:00)</span></span>
+                        <span class="spot-subnote">目的地：上海虹橋站 ｜ 高鐵：<span class="highlight-code">G44 次 (14:30 ➔ 15:00)</span></span>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>嘉興南站</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -674,12 +682,12 @@
                 <tr>
                     <td>
                         <span class="time-text">15:00 - 17:00</span>
-                        <span class="badge badge-act">🎬 活動</span>
+                        <span class="badge badge-act">活動</span>
                     </td>
                     <td>
                         <div class="spot-title">虹橋天地電影院</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Hub+Shanghai+Hongqiao" target="_blank">📍 虹橋天地</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Hub+Shanghai+Hongqiao" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>虹橋天地</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -692,12 +700,12 @@
                 <tr>
                     <td>
                         <span class="time-text">17:00 - 18:30</span>
-                        <span class="badge badge-food">🍽️ 美食</span>
+                        <span class="badge badge-food">美食</span>
                     </td>
                     <td>
                         <div class="spot-title">虹橋天地火鍋</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=虹橋天地+火鍋" target="_blank">📍 虹橋天地</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=虹橋天地+火鍋" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>虹橋天地</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -711,13 +719,13 @@
                 <tr>
                     <td>
                         <span class="time-text">18:30 - 19:30</span>
-                        <span class="badge badge-trans">🚆 交通</span>
+                        <span class="badge badge-stay">住宿</span>
                     </td>
                     <td>
-                        <div class="hotel-tag">🏨 上海大眾空港賓館（北樓）</div>
+                        <div class="hotel-tag">上海大眾空港賓館（北樓）</div>
                         <span class="spot-subnote">交通：市域鐵路（機場聯絡線/機場線）</span>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海大眾空港賓館" target="_blank">📍 上海大眾空港賓館（北樓）</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海大眾空港賓館" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>上海大眾空港賓館（北樓）</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -761,12 +769,12 @@
                 <tr>
                     <td>
                         <span class="time-text">06:30 - 07:00</span>
-                        <span class="badge badge-trans">🚶 交通</span>
+                        <span class="badge badge-trans">交通</span>
                     </td>
                     <td>
                         <div class="spot-title">浦東機場 T2 航站樓</div>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport+Terminal+2" target="_blank">📍 浦東機場 T2 航站樓</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport+Terminal+2" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>浦東機場 T2 航站樓</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -780,13 +788,13 @@
                 <tr>
                     <td>
                         <span class="time-text">09:00 - 11:00</span>
-                        <span class="badge badge-trans">✈️ 交通</span>
+                        <span class="badge badge-trans">交通</span>
                     </td>
                     <td>
                         <div class="spot-title">台北松山機場 (TSA)</div>
-                        <span class="spot-subnote">航班：<span class="highlight-code">✈️ 上海航空 FM801 (PVG ➔ TSA, 09:10-11:00)</span></span>
+                        <span class="spot-subnote">航班：<span class="highlight-code">上海航空 FM801 (PVG ➔ TSA, 09:10-11:00)</span></span>
                         <div>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taipei+Songshan+Airport" target="_blank">📍 台北松山機場 (TSA)</a>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taipei+Songshan+Airport" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>台北松山機場 (TSA)</a>
                         </div>
                         <details>
                             <summary>展開資訊</summary>
@@ -821,26 +829,26 @@
             </ul>
         </div>
 
-        <div class="info-card hotel-card">
+        <div class="info-card">
             <h3>🏨 飯店資訊</h3>
             <ul>
                 <li>
                     <strong>上海舒芙酒店（金沙江路店）</strong><br>
                     • <strong>住宿日期：</strong>2026/07/31<br>
                     • 電話：+86 21-XXXX-XXXX<br>
-                    • 地址：<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海市普陀區金沙江路" target="_blank">📍 上海市普陀區金沙江路 XXX 號</a>
+                    • 地址：<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海市普陀區金沙江路" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>上海市普陀區金沙江路 XXX 號</a>
                 </li>
                 <li style="margin-top: 10px;">
                     <strong>嘉興博雅花園酒店</strong><br>
                     • <strong>住宿日期：</strong>2026/08/01<br>
                     • 電話：+86 573-XXXX-XXXX<br>
-                    • 地址：<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興博雅花園酒店" target="_blank">📍 浙江省嘉興市南湖區迎賓大道 XXX 號</a>
+                    • 地址：<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興博雅花園酒店" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>浙江省嘉興市南湖區迎賓大道 XXX 號</a>
                 </li>
                 <li style="margin-top: 10px;">
                     <strong>上海大眾空港賓館（北樓）</strong><br>
                     • <strong>住宿日期：</strong>2026/08/02<br>
                     • 電話：+86 21-6835-8888<br>
-                    • 地址：<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海大眾空港賓館" target="_blank">📍 上海浦東國際機場 T1 與 T2 航站樓中間連廊</a>
+                    • 地址：<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海大眾空港賓館" target="_blank"><svg class="map-icon" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><path fill="#FBBC05" d="M12 2L5 9h3.5c1.93 0 3.5 1.57 3.5 3.5V16l3.5-3.5c2.31-2.31 2.31-6.07 0-8.38z"/><path fill="#4285F4" d="M12 2l7 7h-3.5C13.57 9 12 7.43 12 5.5V2z"/><path fill="#34A853" d="M12 22s-7-7.75-7-13c0-1.07.21-2.1.58-3.05L12 12.5 18.42 5.95C18.79 6.9 19 7.93 19 9c0 5.25-7 13-7 13z"/><circle fill="#FFFFFF" cx="12" cy="9" r="3.5"/></svg>上海浦東國際機場 T1 與 T2 航站樓中間連廊</a>
                 </li>
             </ul>
         </div>
