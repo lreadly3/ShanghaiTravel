@@ -166,7 +166,21 @@
         .spot-title {
             font-size: 0.95rem;
             font-weight: bold;
-            color: #1e293b;
+            color: #0f172a;
+            display: inline-block;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 0.8rem;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .map-link:hover {
+            text-decoration: underline;
         }
 
         .spot-subnote {
@@ -177,26 +191,14 @@
         }
 
         .hotel-tag {
-            margin-top: 4px;
+            margin-top: 2px;
             padding: 4px 8px;
             background-color: #f3e8ff;
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #581c87;
             display: inline-block;
-        }
-
-        .map-links-container {
-            margin-top: 4px;
-            font-size: 0.8rem;
-        }
-
-        .map-link {
-            display: inline-block;
-            color: var(--link-color);
-            text-decoration: none;
             font-weight: bold;
-            margin-right: 8px;
         }
 
         details {
@@ -319,17 +321,17 @@
             <tbody>
                 <tr>
                     <td>
-                        <span class="time-text">14:40 - 16:45</span>
+                        <span class="time-text">14:30 - 17:00</span>
                         <span class="badge badge-trans">✈️ 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">上海浦東國際機場 (PVG) T2</div>
-                        <span class="spot-subnote">航班：國航 CA196 (TPE ➔ PVG)</span>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport" target="_blank">📍 浦東機場地圖</a>
+                        <div class="spot-title">桃園國際機場 (TPE) T2</div>
+                        <span class="spot-subnote">目的地：上海浦東機場 (PVG) T2 ｜ 航班：國航 CA196 (14:40-16:45)</span>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taiwan+Taoyuan+International+Airport+Terminal+2" target="_blank">📍 桃園國際機場 (TPE) T2</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 預估入境與提領行李約需 45-60 分鐘。<br>
                                 • 提醒：過關請備妥台胞證原件。
@@ -339,16 +341,16 @@
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">16:45 - 19:00</span>
+                        <span class="time-text">17:00 - 19:00</span>
                         <span class="badge badge-trans">🚗 交通</span>
                     </td>
                     <td>
-                        <div><span class="hotel-tag">🏨 上海舒芙酒店（金沙江路店）</span></div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海舒芙酒店" target="_blank">📍 飯店地圖</a>
+                        <div class="hotel-tag">🏨 上海舒芙酒店（金沙江路店）</div>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海舒芙酒店" target="_blank">📍 上海舒芙酒店（金沙江路店）</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 交通：地鐵 2 號線至「金沙江路站」（約 1.5 小時）或搭計程車/滴滴（約 45-60 分鐘）。<br>
                                 • 提醒：搭車前請確認微信或支付寶電子支付已設置完畢。
@@ -363,13 +365,14 @@
                     </td>
                     <td>
                         <div class="spot-title">岩姐燒烤</div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海+岩姐燒烤" target="_blank">📍 岩姐燒烤地圖</a>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海+岩姐燒烤" target="_blank">📍 岩姐燒烤</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 享用特色燒烤晚餐（預計 1 小時）。
+                                • 道地東北風味串燒，推薦：羊肉串、烤生蠔、烤吐司片。<br>
+                                • 均消約 RMB 80-120/人。
                             </div>
                         </details>
                     </td>
@@ -382,9 +385,9 @@
                     <td>
                         <div class="spot-title">KTV 歡唱</div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 晚餐後 KTV 歡唱至晚間 11:00，結束後返回飯店休息。
+                                • 晚餐後前往飯店附近 KTV 歡唱至晚間 11:00，結束後返回飯店休息。
                             </div>
                         </details>
                     </td>
@@ -422,11 +425,11 @@
                     </td>
                     <td>
                         <div class="spot-title">南京路步行街 & 吉伊卡哇旗艦店</div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Pedestrian+Street+Shanghai" target="_blank">📍 南京路地圖</a>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Pedestrian+Street+Shanghai" target="_blank">📍 南京路步行街</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 漫步南京路商圈，朝聖 MINISO 吉伊卡哇 (Chiikawa) 主題旗艦店。
                             </div>
@@ -440,47 +443,50 @@
                     </td>
                     <td>
                         <div class="spot-title">南京路海鮮自助餐</div>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nanjing+Road+Pedestrian+Street+Shanghai" target="_blank">📍 南京路海鮮自助餐</a>
+                        </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 於南京路商圈享用豐富海鮮自助餐。
+                                • 澎湃海鮮、現切和牛、熟食甜點吃到飽。<br>
+                                • 建議提前預約，用餐時間約 2 小時。
                             </div>
                         </details>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">14:30 - 16:59</span>
+                        <span class="time-text">14:30 - 17:00</span>
                         <span class="badge badge-trans">🚄 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">嘉興南站</div>
-                        <span class="spot-subnote">高鐵：G1583 次（上海虹橋 16:32 ➔ 嘉興南 16:59）</span>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 虹橋站</a>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站</a>
+                        <div class="spot-title">上海虹橋站</div>
+                        <span class="spot-subnote">目的地：嘉興南站 ｜ 高鐵：G1583 次（16:30 ➔ 17:00）</span>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 上海虹橋站</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 需回飯店取行李並轉乘至虹橋站。<br>
-                                • 提醒：虹橋站安檢耗時，務必於 15:45 前抵達虹橋站。
+                                • 提醒：虹橋站安檢耗時，務必於 15:30 前抵達虹橋站。
                             </div>
                         </details>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">17:00 - 17:40</span>
+                        <span class="time-text">17:00 - 18:00</span>
                         <span class="badge badge-trans">🚗 交通</span>
                     </td>
                     <td>
-                        <div><span class="hotel-tag">🏨 嘉興博雅花園酒店</span></div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興博雅花園酒店" target="_blank">📍 飯店地圖</a>
+                        <div class="hotel-tag">🏨 嘉興博雅花園酒店</div>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=嘉興博雅花園酒店" target="_blank">📍 嘉興博雅花園酒店</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 由嘉興南站搭乘計程車/滴滴至飯店（車程約 20 分鐘）。
                             </div>
@@ -495,7 +501,7 @@
                     <td>
                         <div class="spot-title">嘉興演唱會</div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 提醒：門票採實名制，務必攜帶台胞證原件入場。<br>
                                 • 散場時人潮較多，請預先規劃接駁方式並補充水分。
@@ -505,15 +511,15 @@
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">22:00 - </span>
+                        <span class="time-text">22:00 - 23:30</span>
                         <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
                         <div class="spot-title">演唱會周邊冒菜</div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 演唱會結束後於周邊享用地道冒菜。
+                                • 散場後熱騰騰宵夜首選，香辣入味，可自由選擇肉類與蔬菜組合。
                             </div>
                         </details>
                     </td>
@@ -524,7 +530,7 @@
         <div class="summary-box">
             <strong>💡 Day 2 實用提醒：</strong>
             <ul>
-                <li>高鐵虹橋站安檢嚴格，16:32 車次請最晚 15:45 抵達。</li>
+                <li>高鐵虹橋站安檢嚴格，16:30 車次請最晚 15:30 抵達。</li>
                 <li>演唱會採實名制，隨身攜帶台胞證原件。</li>
             </ul>
         </div>
@@ -550,16 +556,15 @@
                         <span class="badge badge-spot">📍 景點</span>
                     </td>
                     <td>
-                        <div class="spot-title">嘉興南湖景區 / 月河歷史街區</div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+Nanhu+Lake" target="_blank">📍 南湖景區</a>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Yuehe+Historic+District+Jiaxing" target="_blank">📍 月河街區</a>
+                        <div class="spot-title">月河歷史街區</div>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Yuehe+Historic+District+Jiaxing" target="_blank">📍 月河歷史街區</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 搭渡船遊南湖、參觀煙雨樓、漫步月河古街。<br>
-                                • 提醒：湖邊無遮蔽，請做好防曬與防蚊措施。
+                                • 漫步月河古街、體驗江南水鄉風情。<br>
+                                • 提醒：戶外請做好防曬與防蚊措施。
                             </div>
                         </details>
                     </td>
@@ -570,31 +575,34 @@
                         <span class="badge badge-food">🍽️ 美食</span>
                     </td>
                     <td>
-                        <div class="spot-title">蘭州拉麵</div>
+                        <div class="spot-title">南湖廣場（蘭州拉麵）</div>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+Nanhu+Square" target="_blank">📍 南湖廣場</a>
+                        </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 於當地品嚐熱騰騰牛肉湯麵。
+                                • 道地清真風味，推薦現拉手撕牛肉麵、新疆羊肉串與涼拌小菜。<br>
+                                • 出餐快速，適合搭高鐵前的午餐選擇。
                             </div>
                         </details>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">13:00 - 14:59</span>
+                        <span class="time-text">13:00 - 15:00</span>
                         <span class="badge badge-trans">🚄 交通</span>
                     </td>
                     <td>
-                        <div class="spot-title">上海虹橋站</div>
-                        <span class="spot-subnote">高鐵：G44 次（嘉興南 14:25 ➔ 虹橋 14:59）</span>
-                        <div class="map-links-container">
+                        <div class="spot-title">嘉興南站</div>
+                        <span class="spot-subnote">目的地：上海虹橋站 ｜ 高鐵：G44 次（14:30 ➔ 15:00）</span>
+                        <div>
                             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jiaxing+South+Railway+Station" target="_blank">📍 嘉興南站</a>
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Hongqiao+Railway+Station" target="_blank">📍 虹橋站</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 需於 13:45 前抵達嘉興南站進行安檢。
+                                • 需於 13:30 前抵達嘉興南站進行安檢。
                             </div>
                         </details>
                     </td>
@@ -606,11 +614,11 @@
                     </td>
                     <td>
                         <div class="spot-title">虹橋天地電影院</div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Hub+Shanghai+Hongqiao" target="_blank">📍 虹橋天地地圖</a>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Hub+Shanghai+Hongqiao" target="_blank">📍 虹橋天地電影院</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 抵達虹橋站後經地下通道直接前往「虹橋天地」影城觀影（約 2 小時）。
                             </div>
@@ -624,13 +632,14 @@
                     </td>
                     <td>
                         <div class="spot-title">虹橋天地火鍋</div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=虹橋天地+火鍋" target="_blank">📍 虹橋天地商圈</a>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=虹橋天地+火鍋" target="_blank">📍 虹橋天地火鍋</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
-                                • 電影結束後於虹橋天地商圈內享用熱騰騰火鍋晚餐。
+                                • 推薦海底撈或特色川味麻辣鍋，享用豐富的肉品與鮮蔬。<br>
+                                • 均消約 RMB 120-180/人。
                             </div>
                         </details>
                     </td>
@@ -641,13 +650,13 @@
                         <span class="badge badge-trans">🚆 交通</span>
                     </td>
                     <td>
-                        <div><span class="hotel-tag">🏨 上海大眾空港賓館（北樓）</span></div>
+                        <div class="hotel-tag">🏨 上海大眾空港賓館（北樓）</div>
                         <span class="spot-subnote">交通：市域鐵路（機場聯絡線/機場線）</span>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海大眾空港賓館" target="_blank">📍 飯店地圖</a>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=上海大眾空港賓館" target="_blank">📍 上海大眾空港賓館（北樓）</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 由虹橋樞紐搭乘「市域鐵路」直達浦東國際機場。<br>
                                 • 出站後步行至連廊辦理入住，方便次日清晨辦理登機。
@@ -684,36 +693,36 @@
             <tbody>
                 <tr>
                     <td>
-                        <span class="time-text">06:45 - 07:10</span>
+                        <span class="time-text">06:30 - 07:00</span>
                         <span class="badge badge-trans">🚶 交通</span>
                     </td>
                     <td>
                         <div class="spot-title">浦東機場 T2 航站樓</div>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport+Terminal+2" target="_blank">📍 浦東 T2 地圖</a>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shanghai+Pudong+International+Airport+Terminal+2" target="_blank">📍 浦東機場 T2 航站樓</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 空港賓館步行直達航站樓（約 5-10 分鐘）。<br>
-                                • 提醒：國際/港澳台航班請於起飛前 2 小時（07:10 前）完成報到。
+                                • 提醒：國際/港澳台航班請於起飛前 2 小時（07:00 前）完成報到。
                             </div>
                         </details>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <span class="time-text">09:10 - 11:00</span>
+                        <span class="time-text">09:00 - 11:00</span>
                         <span class="badge badge-trans">✈️ 交通</span>
                     </td>
                     <td>
                         <div class="spot-title">台北松山機場 (TSA)</div>
-                        <span class="spot-subnote">航班：上海航空 FM801 (PVG ➔ TSA)</span>
-                        <div class="map-links-container">
-                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taipei+Songshan+Airport" target="_blank">📍 松山機場地圖</a>
+                        <span class="spot-subnote">航班：上海航空 FM801 (PVG ➔ TSA, 09:10-11:00)</span>
+                        <div>
+                            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taipei+Songshan+Airport" target="_blank">📍 台北松山機場 (TSA)</a>
                         </div>
                         <details>
-                            <summary>詳細內容</summary>
+                            <summary>展開資訊</summary>
                             <div class="details-content">
                                 • 上海浦東 T2 ➔ 台北松山機場。<br>
                                 • 提醒：含肉類食品（如嘉興肉粽）嚴禁攜帶入境台灣。
